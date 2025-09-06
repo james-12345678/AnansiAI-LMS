@@ -1,0 +1,1698 @@
+my api endpoints documentations
+Select a definition
+
+TwinAI.WebAPI v1
+TwinAI.WebAPI
+ 1.0 
+OAS 3.0
+http://13.48.27.31/anansiai/swagger/v1/swagger.json
+Servers
+
+/anansiai
+Asssignments
+
+
+GET
+/api/assignments
+
+Parameters
+Try it out
+No parameters
+
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+
+GET
+/api/assignments/{assignmentId}
+
+Parameters
+Try it out
+Name	Description
+assignmentId *
+integer($int32)
+(path)
+assignmentId
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+
+PUT
+/api/assignments/{assignmentId}
+
+Parameters
+Try it out
+Name	Description
+assignmentId *
+integer($int32)
+(path)
+assignmentId
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "lessonId": 0,
+  "title": "string",
+  "questionType": 1,
+  "content": "string",
+  "rubric": "string",
+  "deadline": "2025-07-29T17:35:37.565Z",
+  "approvalStatus": 1,
+  "approvedAt": "2025-07-29T17:35:37.565Z",
+  "isActive": true
+}
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+
+DELETE
+/api/assignments/{assignmentId}
+
+Parameters
+Try it out
+Name	Description
+assignmentId *
+integer($int32)
+(path)
+assignmentId
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+
+POST
+/api/assignments/add-assignment
+
+Parameters
+Try it out
+No parameters
+
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "lessonId": 0,
+  "title": "string",
+  "questionType": 1,
+  "content": "string",
+  "rubric": "string",
+  "deadline": "2025-07-29T17:35:37.574Z",
+  "approvalStatus": 1,
+  "approvedAt": "2025-07-29T17:35:37.574Z",
+  "isActive": true
+}
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+Auth
+
+
+POST
+/api/Auth/register
+
+Parameters
+Try it out
+No parameters
+
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "firstName": "string",
+  "lastName": "string",
+  "email": "string",
+  "address": "string",
+  "phoneNumber": "string",
+  "institutionName": "string",
+  "role": {
+    "id": "string",
+    "name": "string"
+  }
+}
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+
+POST
+/api/Auth/login
+
+Parameters
+Try it out
+No parameters
+
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "email": "string",
+  "password": "string"
+}
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+BehaviorLogs
+
+
+POST
+/api/behavior-logs/add-behavior-log
+
+Parameters
+Try it out
+No parameters
+
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "lessonId": 0,
+  "lessonSessionId": 0,
+  "studentId": "string",
+  "institutionId": 0,
+  "actionType": 1,
+  "details": "string",
+  "riskScore": 0,
+  "flagged": true
+}
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+
+GET
+/api/behavior-logs/{logId}
+
+Parameters
+Try it out
+Name	Description
+logId *
+integer($int32)
+(path)
+logId
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+Curriculum
+
+
+GET
+/api/curriculums
+
+Parameters
+Try it out
+No parameters
+
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+
+GET
+/api/curriculums/{curriculumId}
+
+Parameters
+Try it out
+Name	Description
+curriculumId *
+integer($int32)
+(path)
+curriculumId
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+
+PUT
+/api/curriculums/{curriculumId}
+
+Parameters
+Try it out
+Name	Description
+curriculumId *
+integer($int32)
+(path)
+curriculumId
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "name": "string",
+  "description": "string"
+}
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+
+DELETE
+/api/curriculums/{curriculumId}
+
+Parameters
+Try it out
+Name	Description
+curriculumId *
+integer($int32)
+(path)
+curriculumId
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+
+POST
+/api/curriculums/add-curriculum
+
+Parameters
+Try it out
+No parameters
+
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "name": "string",
+  "description": "string",
+  "institutionId": 0
+}
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+
+GET
+/api/curriculums/by-institution
+
+Parameters
+Try it out
+Name	Description
+institutionId
+integer($int32)
+(query)
+institutionId
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+Enums
+
+
+GET
+/api/enums/all-enums
+
+Parameters
+Try it out
+No parameters
+
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+Goal
+
+
+GET
+/api/goals
+
+Parameters
+Try it out
+No parameters
+
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+
+GET
+/api/goals/{goalId}
+
+Parameters
+Try it out
+Name	Description
+goalId *
+integer($int32)
+(path)
+goalId
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+
+PUT
+/api/goals/{goalId}
+
+Parameters
+Try it out
+Name	Description
+goalId *
+integer($int32)
+(path)
+goalId
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "description": "string",
+  "subjectId": 0,
+  "curriculumId": 0,
+  "termId": 0,
+  "institutionId": 0
+}
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+
+DELETE
+/api/goals/{goalId}
+
+Parameters
+Try it out
+Name	Description
+goalId *
+integer($int32)
+(path)
+goalId
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+
+POST
+/api/goals/add-goal
+
+Parameters
+Try it out
+No parameters
+
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "description": "string",
+  "subjectId": 0,
+  "curriculumId": 0,
+  "termId": 0,
+  "institutionId": 0
+}
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+Institutions
+
+
+GET
+/api/Institutions
+
+
+POST
+/api/Institutions
+
+
+GET
+/api/Institutions/{id}
+
+
+PUT
+/api/Institutions/{id}
+
+
+DELETE
+/api/Institutions/{id}
+
+Lessons
+
+
+GET
+/api/lessons
+
+Parameters
+Try it out
+No parameters
+
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+
+GET
+/api/lessons/{lessonId}
+
+Parameters
+Try it out
+Name	Description
+lessonId *
+integer($int32)
+(path)
+lessonId
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+
+PUT
+/api/lessons/{lessonId}
+
+Parameters
+Try it out
+Name	Description
+lessonId *
+integer($int32)
+(path)
+lessonId
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "lessonId": 0,
+  "title": "string",
+  "content": "string",
+  "difficultyLevel": 0,
+  "approvalStatus": 1,
+  "approvedAt": "2025-07-29T17:35:37.638Z",
+  "isActive": true
+}
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+
+DELETE
+/api/lessons/{lessonId}
+
+Parameters
+Try it out
+Name	Description
+lessonId *
+integer($int32)
+(path)
+lessonId
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+
+POST
+/api/lessons/add-lesson
+
+Parameters
+Try it out
+No parameters
+
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "subjectId": 0,
+  "title": "string",
+  "content": "string",
+  "difficultyLevel": 0,
+  "approvalStatus": 1,
+  "approvedAt": "2025-07-29T17:35:37.643Z",
+  "isActive": true
+}
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+LessonSessions
+
+
+POST
+/api/lesson-sessions/start-session
+
+Parameters
+Try it out
+No parameters
+
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "lessonId": 0,
+  "studentId": "string",
+  "institutionId": 0
+}
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+
+GET
+/api/lesson-sessions/{sessionId}
+
+Parameters
+Try it out
+Name	Description
+sessionId *
+integer($int32)
+(path)
+sessionId
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+
+POST
+/api/lesson-sessions/end-session/{sessionId}
+
+Parameters
+Try it out
+Name	Description
+sessionId *
+integer($int32)
+(path)
+sessionId
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "endTime": "2025-07-29T17:35:37.651Z",
+  "isActive": true
+}
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+Levels
+
+
+GET
+/api/levels
+
+Parameters
+Try it out
+No parameters
+
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+
+GET
+/api/levels/{levelId}
+
+Parameters
+Try it out
+Name	Description
+levelId *
+integer($int32)
+(path)
+levelId
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+
+PUT
+/api/levels/{levelId}
+
+Parameters
+Try it out
+Name	Description
+levelId *
+integer($int32)
+(path)
+levelId
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "levelName": "string",
+  "isActive": true
+}
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+
+DELETE
+/api/levels/{levelId}
+
+Parameters
+Try it out
+Name	Description
+levelId *
+integer($int32)
+(path)
+levelId
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+
+POST
+/api/levels/add-level
+
+Parameters
+Try it out
+No parameters
+
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "levelName": "string",
+  "institutionId": 0
+}
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+
+GET
+/api/levels/by-institution
+
+Parameters
+Try it out
+Name	Description
+institutionId
+integer($int32)
+(query)
+institutionId
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+
+GET
+/api/levels/level-assigned/{id}
+
+
+POST
+/api/levels/assign-student-to-level
+
+Parameters
+Try it out
+No parameters
+
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "studentId": "string",
+  "levelId": 0,
+  "institutionId": 0
+}
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+
+PUT
+/api/levels/assigned/{id}
+
+Parameters
+Try it out
+Name	Description
+id *
+integer($int32)
+(path)
+id
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "studentId": "string",
+  "levelId": 0,
+  "status": 1
+}
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+Milestones
+
+
+GET
+/api/milestones
+
+Parameters
+Try it out
+No parameters
+
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+
+GET
+/api/milestones/{milestoneId}
+
+Parameters
+Try it out
+Name	Description
+milestoneId *
+integer($int32)
+(path)
+milestoneId
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+
+PUT
+/api/milestones/{milestoneId}
+
+Parameters
+Try it out
+Name	Description
+milestoneId *
+integer($int32)
+(path)
+milestoneId
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "description": "string",
+  "curriculumId": 0,
+  "subjectId": 0,
+  "termId": 0
+}
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+
+DELETE
+/api/milestones/{milestoneId}
+
+Parameters
+Try it out
+Name	Description
+milestoneId *
+integer($int32)
+(path)
+milestoneId
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+
+POST
+/api/milestones/add-milestone
+
+Parameters
+Try it out
+No parameters
+
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "description": "string",
+  "curriculumId": 0,
+  "subjectId": 0,
+  "termId": 0,
+  "institutionId": 0
+}
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+Subjects
+
+
+GET
+/api/subjects
+
+Parameters
+Try it out
+No parameters
+
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+
+GET
+/api/subjects/{subjectId}
+
+Parameters
+Try it out
+Name	Description
+subjectId *
+integer($int32)
+(path)
+subjectId
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+
+PUT
+/api/subjects/{subjectId}
+
+Parameters
+Try it out
+Name	Description
+subjectId *
+integer($int32)
+(path)
+subjectId
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "subjectName": "string",
+  "description": "string",
+  "isActive": true,
+  "curriculumId": 0
+}
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+
+DELETE
+/api/subjects/{subjectId}
+
+Parameters
+Try it out
+Name	Description
+subjectId *
+integer($int32)
+(path)
+subjectId
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+
+POST
+/api/subjects/add-subject
+
+Parameters
+Try it out
+No parameters
+
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "institutionId": 0,
+  "subjectName": "string",
+  "description": "string",
+  "isActive": true,
+  "curriculumId": 0
+}
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+
+GET
+/api/subjects/by-institution
+
+Parameters
+Try it out
+Name	Description
+institutionId
+integer($int32)
+(query)
+institutionId
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+
+GET
+/api/subjects/by-curriculum
+
+Parameters
+Try it out
+Name	Description
+curriculumId
+integer($int32)
+(query)
+curriculumId
+institutionId
+integer($int32)
+(query)
+institutionId
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+SubjectsAssignments
+
+
+GET
+/api/subject-assignments
+
+Parameters
+Try it out
+No parameters
+
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+
+GET
+/api/subject-assignments/{id}
+
+Parameters
+Try it out
+Name	Description
+id *
+integer($int32)
+(path)
+id
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+
+PUT
+/api/subject-assignments/{id}
+
+Parameters
+Try it out
+Name	Description
+id *
+integer($int32)
+(path)
+id
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "teacherId": "string",
+  "subjectId": 0,
+  "levelId": 0
+}
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+
+DELETE
+/api/subject-assignments/{id}
+
+Parameters
+Try it out
+Name	Description
+id *
+integer($int32)
+(path)
+id
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+
+POST
+/api/subject-assignments/assign-subject-to-teacher
+
+Parameters
+Try it out
+No parameters
+
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "teacherId": "string",
+  "subjectId": 0,
+  "levelId": 0,
+  "institutionId": 0
+}
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+Teachers
+
+
+GET
+/api/teachers/teacher-subjects-with-milestones-and-goals
+
+Parameters
+Try it out
+Name	Description
+curriculumId
+integer($int32)
+(query)
+curriculumId
+termId
+integer($int32)
+(query)
+termId
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+Terms
+
+
+GET
+/api/terms
+
+Parameters
+Try it out
+No parameters
+
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+
+GET
+/api/terms/{termId}
+
+Parameters
+Try it out
+Name	Description
+termId *
+integer($int32)
+(path)
+termId
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+
+PUT
+/api/terms/{termId}
+
+Parameters
+Try it out
+Name	Description
+termId *
+integer($int32)
+(path)
+termId
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "termName": "string"
+}
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+
+DELETE
+/api/terms/{termId}
+
+Parameters
+Try it out
+Name	Description
+termId *
+integer($int32)
+(path)
+termId
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+
+POST
+/api/terms/add-term
+
+Parameters
+Try it out
+No parameters
+
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "termId": 0,
+  "termName": "string",
+  "institutionId": 0
+}
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+
+GET
+/api/terms/by-institution
+
+Parameters
+Try it out
+Name	Description
+institutionId
+integer($int32)
+(query)
+institutionId
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+Users
+
+
+GET
+/api/Users/get-users-by-role
+
+Parameters
+Cancel
+Name	Description
+roleName
+string
+(query)
+Admin
+Execute
+Clear
+Responses
+Curl
+
+curl -X 'GET' \
+  'http://13.48.27.31/anansiai/api/Users/get-users-by-role?roleName=Admin' \
+  -H 'accept: */*'
+Request URL
+http://13.48.27.31/anansiai/api/Users/get-users-by-role?roleName=Admin
+Server response
+Code	Details
+401
+Undocumented
+Error: Unauthorized
+
+Response headers
+ date: Tue,29 Jul 2025 17:35:34 GMT 
+ server: Microsoft-IIS/10.0 
+ transfer-encoding: chunked 
+ www-authenticate: Bearer 
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+
+POST
+/api/Users/add-users-as-admin
+
+Parameters
+Try it out
+No parameters
+
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "firstName": "string",
+  "lastName": "string",
+  "email": "string",
+  "address": "string",
+  "phoneNumber": "string",
+  "institutionName": "string",
+  "role": {
+    "id": "string",
+    "name": "string"
+  }
+}
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+
+POST
+/api/Users/add-users-as-super-admin
+
+Parameters
+Try it out
+No parameters
+
+Request body
+
+application/json
+Example Value
+Schema
+{
+  "firstName": "string",
+  "lastName": "string",
+  "email": "string",
+  "address": "string",
+  "phoneNumber": "string",
+  "institutionId": 0,
+  "role": {
+    "id": "string",
+    "name": "string"
+  }
+}
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+
+GET
+/api/Users/all-roles
+
+Parameters
+Try it out
+No parameters
+
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+
+GET
+/api/Users/teachers-in-institution
+
+Parameters
+Try it out
+No parameters
+
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+
+GET
+/api/Users/students
+
+Parameters
+Try it out
+No parameters
+
+Responses
+Code	Description	Links
+200	
+OK
+
+No links
+WeatherForecast
+
+
+GET
+/WeatherForecast
+
+Parameters
+Try it out
+No parameters
+
+Responses
+Code	Description	Links
+200	
+OK
+
+Media type
+
+text/plain
+Controls Accept header.
+Example Value
+Schema
+[
+  {
+    "date": "2025-07-29",
+    "temperatureC": 0,
+    "temperatureF": 0,
+    "summary": "string"
+  }
+]
+No links
+
+Schemas
+ApprovalStatusinteger($int32)
+Enum:
+Array [ 4 ]
+AssignLevelToStudentDto{
+studentId	[...]
+levelId	[...]
+institutionId	[...]
+}
+AssignSubjectToTeacherDto{
+teacherId	[...]
+subjectId	[...]
+levelId	[...]
+institutionId	[...]
+}
+BehaviorActionTypeinteger($int32)
+Enum:
+Array [ 9 ]
+CreateAssignmentDto{
+lessonId	[...]
+title*	[...]
+questionType*	QuestionType[...]
+content	[...]
+rubric	[...]
+deadline	[...]
+approvalStatus	ApprovalStatus[...]
+approvedAt	[...]
+isActive	[...]
+}
+CreateBehaviorLogDto{
+lessonId	[...]
+lessonSessionId	[...]
+studentId	[...]
+institutionId	[...]
+actionType	BehaviorActionType[...]
+details	[...]
+riskScore	[...]
+flagged	[...]
+}
+CreateCurriculumDto{
+name	[...]
+description	[...]
+institutionId	[...]
+}
+CreateGoalDto{
+description	[...]
+subjectId	[...]
+curriculumId	[...]
+termId	[...]
+institutionId	[...]
+}
+CreateInstitutionDto{
+name	[...]
+address	[...]
+institutionId	[...]
+}
+CreateLessonDto{
+subjectId	[...]
+title*	[...]
+content	[...]
+difficultyLevel	[...]
+approvalStatus	ApprovalStatus[...]
+approvedAt	[...]
+isActive	[...]
+}
+CreateLessonSessionDto{
+lessonId	[...]
+studentId	[...]
+institutionId	[...]
+}
+CreateLevelDto{
+levelName	[...]
+institutionId	[...]
+}
+CreateMilestoneDto{
+description	[...]
+curriculumId	[...]
+subjectId	[...]
+termId	[...]
+institutionId	[...]
+}
+CreateSubjectDto{
+institutionId	[...]
+subjectName*	[...]
+description*	[...]
+isActive	[...]
+curriculumId	[...]
+}
+CreateTermDto{
+termId	[...]
+termName	[...]
+institutionId	[...]
+}
+EditAssignLevelToStudentDto{
+studentId	[...]
+levelId	[...]
+status	LevelStudentStatus[...]
+}
+EditAssignSubjectToTeacher{
+teacherId	[...]
+subjectId	[...]
+levelId	[...]
+}
+EditInstitutionDto{
+name	[...]
+address	[...]
+}
+EndLessonSessionDto{
+endTime	[...]
+isActive	[...]
+}
+LevelStudentStatusinteger($int32)
+Enum:
+Array [ 3 ]
+LoginDto{
+email	[...]
+password	[...]
+}
+QuestionTypeinteger($int32)
+Enum:
+Array [ 4 ]
+RegisterUserDTO{
+firstName*	[...]
+lastName*	[...]
+email*	[...]
+address*	[...]
+phoneNumber	[...]
+institutionId	[...]
+role*	RoleDto{...}
+}
+RoleDto{
+id	[...]
+name	[...]
+}
+UpdateAssignmentDto{
+lessonId	[...]
+title*	[...]
+questionType*	QuestionType[...]
+content	[...]
+rubric	[...]
+deadline	[...]
+approvalStatus	ApprovalStatus[...]
+approvedAt	[...]
+isActive	[...]
+}
+UpdateCurriculumDto{
+name	[...]
+description	[...]
+}
+UpdateGoalDto{
+description	[...]
+subjectId	[...]
+curriculumId	[...]
+termId	[...]
+institutionId	[...]
+}
+UpdateLessonDto{
+lessonId	[...]
+title*	[...]
+content	[...]
+difficultyLevel	[...]
+approvalStatus	ApprovalStatus[...]
+approvedAt	[...]
+isActive	[...]
+}
+UpdateLevelDto{
+levelName	[...]
+isActive	[...]
+}
+UpdateMilestoneDto{
+description	[...]
+curriculumId	[...]
+subjectId	[...]
+termId	[...]
+}
+UpdateSubjectDto{
+subjectName*	[...]
+description*	[...]
+isActive	[...]
+curriculumId	[...]
+}
+UpdateTermDto{
+termName	[...]
+}
+UserRegisterDTO{
+firstName*	[...]
+lastName*	[...]
+email*	[...]
+address*	[...]
+phoneNumber	[...]
+institutionName	[...]
+role*	RoleDto{...}
+}
+WeatherForecast{
+date	[...]
+temperatureC	[...]
+temperatureF	[...]
+summary	[...]
+}

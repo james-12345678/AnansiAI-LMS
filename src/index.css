@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom animation delay classes */
+@layer utilities {
+  .animate-bounce-delay-100 {
+    animation: bounce 1s infinite;
+    animation-delay: 0.1s;
+  }
+
+  .animate-bounce-delay-200 {
+    animation: bounce 1s infinite;
+    animation-delay: 0.2s;
+  }
+
+  /* Chart indicator classes */
+  .chart-indicator {
+    background-color: var(--indicator-color, currentColor);
+  }
+
+  .chart-indicator-border {
+    border-color: var(--indicator-color, currentColor);
+    background-color: var(--indicator-color, currentColor);
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 168 100% 42%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 218 100% 52%;
+    --radius: 0.75rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 168 100% 42%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 218 100% 52%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 94.1%;
+    --sidebar-primary-foreground: 240 5.9% 10%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans text-base md:text-lg leading-normal antialiased;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
+  }
+
+  h1 {
+    @apply font-heading font-bold text-3xl md:text-4xl lg:text-5xl leading-tight;
+  }
+  h2 {
+    @apply font-heading font-semibold text-2xl md:text-3xl lg:text-[32px] leading-snug;
+  }
+  h3 {
+    @apply font-heading font-semibold text-lg md:text-xl lg:text-2xl leading-snug;
+  }
+
+  /* Dashboard-specific downscaled typography */
+  .superadmin-dashboard, .admin-dashboard, .student-dashboard, .teacher-dashboard { font-size: 10px; }
+  @screen md { .superadmin-dashboard, .admin-dashboard, .student-dashboard, .teacher-dashboard { font-size: 12px; } }
+
+  /* Reduce Tailwind text utility sizes within dashboards */
+  .superadmin-dashboard .text-xs, .admin-dashboard .text-xs, .student-dashboard .text-xs, .teacher-dashboard .text-xs { font-size: 0.625rem !important; }
+  .superadmin-dashboard .text-sm, .admin-dashboard .text-sm, .student-dashboard .text-sm, .teacher-dashboard .text-sm { font-size: 0.6875rem !important; }
+  .superadmin-dashboard .text-base, .admin-dashboard .text-base, .student-dashboard .text-base, .teacher-dashboard .text-base { font-size: 0.75rem !important; }
+  .superadmin-dashboard .text-lg, .admin-dashboard .text-lg, .student-dashboard .text-lg, .teacher-dashboard .text-lg { font-size: 0.875rem !important; }
+  .superadmin-dashboard .text-xl, .admin-dashboard .text-xl, .student-dashboard .text-xl, .teacher-dashboard .text-xl { font-size: 1rem !important; }
+  .superadmin-dashboard .text-2xl, .admin-dashboard .text-2xl, .student-dashboard .text-2xl, .teacher-dashboard .text-2xl { font-size: 1.125rem !important; }
+  .superadmin-dashboard .text-3xl, .admin-dashboard .text-3xl, .student-dashboard .text-3xl, .teacher-dashboard .text-3xl { font-size: 1.25rem !important; }
+
+  /* Keep header/heading sizes as-is (do not change) */
+  .superadmin-dashboard h1, .admin-dashboard h1, .student-dashboard h1, .teacher-dashboard h1 { font-family: 'Poppins', Inter, system-ui, sans-serif; font-weight: 700; font-size: 20px !important; line-height: 1.2; }
+  @screen md { .superadmin-dashboard h1, .admin-dashboard h1, .student-dashboard h1, .teacher-dashboard h1 { font-size: 26px !important; } }
+  @screen lg { .superadmin-dashboard h1, .admin-dashboard h1, .student-dashboard h1, .teacher-dashboard h1 { font-size: 32px !important; } }
+
+  .superadmin-dashboard h2, .admin-dashboard h2, .student-dashboard h2, .teacher-dashboard h2 { font-family: 'Poppins', Inter, system-ui, sans-serif; font-weight: 600; font-size: 16px !important; line-height: 1.25; }
+  @screen md { .superadmin-dashboard h2, .admin-dashboard h2, .student-dashboard h2, .teacher-dashboard h2 { font-size: 20px !important; } }
+  @screen lg { .superadmin-dashboard h2, .admin-dashboard h2, .student-dashboard h2, .teacher-dashboard h2 { font-size: 22px !important; } }
+
+  .superadmin-dashboard h3, .admin-dashboard h3, .student-dashboard h3, .teacher-dashboard h3 { font-family: 'Poppins', Inter, system-ui, sans-serif; font-weight: 600; font-size: 12px !important; line-height: 1.3; }
+  @screen md { .superadmin-dashboard h3, .admin-dashboard h3, .student-dashboard h3, .teacher-dashboard h3 { font-size: 14px !important; } }
+  @screen lg { .superadmin-dashboard h3, .admin-dashboard h3, .student-dashboard h3, .teacher-dashboard h3 { font-size: 15px !important; } }
+
+  .superadmin-dashboard small, .admin-dashboard small, .student-dashboard small, .teacher-dashboard small,
+  .superadmin-dashboard .caption, .admin-dashboard .caption, .student-dashboard .caption, .teacher-dashboard .caption,
+  .superadmin-dashboard .footnote, .admin-dashboard .footnote, .student-dashboard .footnote, .teacher-dashboard .footnote { font-size: 9px; }
+  @screen md { .superadmin-dashboard small, .admin-dashboard small, .student-dashboard small, .teacher-dashboard small,
+  .superadmin-dashboard .caption, .admin-dashboard .caption, .student-dashboard .caption, .teacher-dashboard .caption,
+  .superadmin-dashboard .footnote, .admin-dashboard .footnote, .student-dashboard .footnote, .teacher-dashboard .footnote { font-size: 10px; } }
+
+  /* Smaller buttons on dashboard (not header icon buttons) */
+  .superadmin-dashboard main button, .admin-dashboard main button, .student-dashboard main button, .teacher-dashboard main button,
+  .superadmin-dashboard section button, .admin-dashboard section button, .student-dashboard section button, .teacher-dashboard section button,
+  .superadmin-dashboard .card-elevated button, .admin-dashboard .card-elevated button, .student-dashboard .card-elevated button, .teacher-dashboard .card-elevated button { font-size: 10px; }
+  @screen md { .superadmin-dashboard main button, .admin-dashboard main button, .student-dashboard main button, .teacher-dashboard main button,
+  .superadmin-dashboard section button, .admin-dashboard section button, .student-dashboard section button, .teacher-dashboard section button,
+  .superadmin-dashboard .card-elevated button, .admin-dashboard .card-elevated button, .student-dashboard .card-elevated button, .teacher-dashboard .card-elevated button { font-size: 12px; } }
+
+  small, .caption, .footnote {
+    @apply text-xs md:text-sm text-muted-foreground;
+  }
+}
+
+@layer components {
+  .glass-effect {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+
+  .gradient-primary {
+    @apply bg-gradient-to-r from-primary-500 to-primary-600;
+  }
+
+  .gradient-secondary {
+    @apply bg-gradient-to-r from-secondary-400 to-secondary-600;
+  }
+
+  .gradient-accent {
+    @apply bg-gradient-to-r from-accent-400 to-accent-600;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent;
+  }
+
+  /* Declutter: hide decorative trend labels in Super Admin stat cards */
+  .bg-gradient-to-br.from-blue-500.to-blue-600 p.text-blue-100.flex.items-center.mt-2 { display: none; }
+  .bg-gradient-to-br.from-green-500.to-green-600 p.text-green-100.flex.items-center.mt-2 { display: none; }
+  .bg-gradient-to-br.from-purple-500.to-purple-600 p.text-purple-100.flex.items-center.mt-2 { display: none; }
+  .bg-gradient-to-br.from-orange-500.to-orange-600 p.text-orange-100.flex.items-center.mt-2 { display: none; }
+
+  .card-elevated {
+    @apply bg-white rounded-xl shadow-soft border border-gray-100;
+  }
+
+  .card-interactive {
+    @apply card-elevated hover:shadow-medium transition-all duration-300 hover:-translate-y-1;
+  }
+
+  .btn-primary {
+    @apply bg-primary-500 hover:bg-primary-600 text-white font-semibold text-sm md:text-base px-6 py-3 rounded-lg transition-all duration-200 shadow-sm hover:shadow-md;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary-100 hover:bg-secondary-200 text-secondary-700 font-semibold text-sm md:text-base px-6 py-3 rounded-lg transition-all duration-200;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 border-2 border-primary-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-200 bg-primary-50/30 hover:bg-primary-50/50 focus:bg-white placeholder:text-secondary-400;
+  }
+
+  /* Animation delay utilities */
+  .animate-delay-2s {
+    animation-delay: -2s;
+  }
+
+  .animate-delay-4s {
+    animation-delay: -4s;
+  }
+
+  .animate-delay-6s {
+    animation-delay: -6s;
+  }
+}
